@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ac6ee84b93.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav {
+            background-color: black;
+            height: 80px;
+            width: 100%;
+            position: sticky;
+            top: 0px;
+        }
+
+        .logo img {
+            width: 100px;
+            padding-left: 10px;
+        }
+
+        .nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .nav ul li {
+            display: inline-block;
+            line-height: 50px;
+            margin: 0px 5px;
+        }
+
+        .nav ul li a {
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 7px 13px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: lightcoral;
+            transition: 0.5s;
+        }
+
+        .checkbtn {
+            font-size: 30px;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .hide p {
+            display: none;
+            color: red;
+        }
+
+        button:hover {
+            display: block;
+        }
+
+        .container {
+            margin: 24px;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .text-container {
+            padding: 10px;
+            text-align: center;
+            text-align-last: center;
+        }
+
+        .menu,
+        .about {
+            font-size: 28px;
+            margin-left: 25px;
+            text-shadow: 2px 2px lightcoral;
+            padding-top: 10px;
+        }
+
+        /*Home Page*/
+        .home-section {
+            background-image: url("https://i.pinimg.com/736x/e9/88/09/e988093865a29fbf6ed8c4f0beb8e302.jpg");
+            width: 100%;
+            height: 50vh;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-section h3 {
+            margin: 0px;
+            font-size: 2em;
+            color: white;
+            text-transform: uppercase;
+
+        }
+
+        @media screen and (min-width:800px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+
+            .nav ul li a {
+                font-size: 16px;
+                padding-right: 30px;
+
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas: 'a a a a';
+                gap: 10px;
+            }
+            .contact-section{
+                background-image: url("https://us.123rf.com/450wm/gkrphoto/gkrphoto1602/gkrphoto160200147/52537566-delicious-omelette-with-vegetables.jpg?ver=6");
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+            }
+            .contact-us{
+                width: 60vw;
+                height: 30vh;
+                background-color: white;
+                box-shadow: 3px 3px 25px blueviolet;
+                padding-left: 50px;
+                padding-top: 40px;
+                
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            .nav ul li #feed {
+                display: none;
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas: 'a a a';
+                gap: 10px;
+            }
+            .contact-section{
+                background-image: url("https://us.123rf.com/450wm/gkrphoto/gkrphoto1602/gkrphoto160200147/52537566-delicious-omelette-with-vegetables.jpg?ver=6");
+                width: 100%;
+                height: 50vh;
+                background-size: cover;
+            }
+            
+        }
+
+        @media screen and (max-width:700px) {
+            .nav ul li #contact {
+                display: none;
+            }
+            .contact-us{
+                width: 60%;
+                height: 70vh;
+            }
+            
+            
+        }
+
+        @media screen and (max-width:600px) {
+            .checkbtn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 40vh;
+                background: #2c3e50;
+                top: 60px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+            }
+
+            .nav ul li #feed,
+            .nav ul li #contact {
+                display: block;
+            }
+
+            .nav ul li {
+                display: block;
+                margin: 10px 0px;
+                line-height: 30x;
+            }
+
+            .nav ul li a {
+                font-size: 20px;
+            }
+
+            .nav ul li a:hover,
+            .nav ul li a:active {
+                background: none;
+                color: red;
+            }
+
+            #check:checked~ul {
+                left: 0px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas: 'a a';
+                gap: 10px;
+            }
+        }
+
+        @media screen and (max-width:400px) {
+            .container {
+                display: grid;
+                grid-template-areas: 'a';
+                gap: 10px;
+            }
+            
+        }
+
+        /*About page*/
+        .bg-color-2 {
+            background-color: white;
+            width: 100%;
+
+        }
+        .bg-color-2 .about-img {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-img img{
+            width: 80%;
+            box-shadow: 2px 2px 12px black;
+        }
+        /*contact*/
+        .contact-us{
+            width: 60vw;
+            height: 60vh;
+            background-color: white;
+            box-shadow: 3px 3px 25px blueviolet;
+            padding-left: 30px;
+            padding-top: 30px;
+            
+        }
+        
+        .contact-section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .contact-us h2{
+            font-size: 28px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-bottom: 5px;
+        }
+        .contact-us label{
+            font-size: 22px;
+            padding-bottom: 5px;
+        }
+        .contact-us input{
+            width: 40%;
+            height: 10%;
+            border-top-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-bottom-width: 3px;
+            border-style: solid black;
+            padding-bottom: 5px;
+        }
+        .contact-us button{
+            width: 16%;
+            height: 8%;
+            border: 0px;
+            font-size: 16px;
+            color: white;
+            background-color: lightcoral;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .contact-us button:hover{
+            border: 2px solid;
+            border-color: blue;
+            background-color: white;
+            color: black;
+        }
+        /*footer*/
+        .footer-section{
+            background-color: rgb(225, 231, 231);
+            height: 30%;
+            position: relative;
+            align-items: center;
+        }
+        .icons, .refer ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 20px;
+        }
+        .icons i{
+            background-color: black;
+            padding: 10px;
+            font-size: 25px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        .unorder li{
+            margin-right: 25px;
+            font-size: 22px;
+        }
+        .copyright{
+            background-color: black;
+            color: white;
+            height: 50px;
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars" style="color: white;"></i>
+        </label>
+        <label class="logo">
+            <img src="./82bed479344270067e3d2171379949b3-removebg-preview.png" alt="">
+        </label>
+        <ul type="none">
+            <li><a class="nav-link" href="#">Home</a></li>
+            <li><a class="nav-link" href="#menu-link">Menu</a></li>
+            <li><a class="nav-link" href="#about-link" id="service">About</a></li>
+            <li><a class="nav-link" href="#contact-link" id="contact">Contact</a></li>
+            <li><a class="nav-link" href="#footer-link" id="feed">Follow Us</a></li>
+        </ul>
+    </nav>
+    <!--Home Page-->
+    <div class="home-section">
+        <h3>Get Delicious <span style="color:darkorange;">Food</span></h3>
+    </div>
+    <!--Menu-->
+    <h1 class="menu" id="menu-link">MENU</h1>
+    <div class="container">
+
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/steak.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/wine.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="1st">
+            <div class="text-container">
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+                <p> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--About-->
+    <div class="bg-color-2" id="about-link">
+        <h1 class="about" >About</h1>
+        <div class="about-img">
+            <img src="https://www.w3schools.com/w3images/chef.jpg" alt="">
+            <h3 style="font-size: 2rem">I am Who I Am!</h3>
+            <p style="font-size: 20px;font-style: italic; ">With Passion For Real, Good Food</p>
+            <p style="font-size:18px; padding-left: 30px; padding-right: 30px; text-align: justify;">Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of
+                lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus
+                ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+                Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies
+                congue gravida diam non fringilla.</p>
+        </div>
+    </div>
+
+    <!--contact-->
+    <div class="contact-section" id="contact-link">
+        <div class="contact-us" >
+            <h2 >Contact Us</h2>
+            <label for="name">Name</label><br>
+            <input type="text" placeholder="Enter your name" id="name"><br>
+            <label for="email">Email</label><br>
+            <input type="text" placeholder="Enter your email" id="email"><br>
+            <label for="phone">Phone</label><br>
+            <input type="text" placeholder="Enter your number" id="phone"><br>
+            <button>Submit</button>
+        </div>
+
+    </div>
+    <!--Footer-->
+    <div class="footer-section" id="footer-link">
+        <div class="icons">
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
+            <i class="fa-brands fa-twitter" style="color:white;"></i>
+            <i class="fa-brands fa-linkedin" style="color: white;"></i>
+            <i class="fa-brands fa-youtube" style="color: white;"></i>
+        </div>
+        <div class="refer">
+            <ul class="unorder" type="none">
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact Us</li>
+                <li>Our Team</li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p><span style="font-weight: bold; font-size: 18px;">Followed by</span> Food Store </p>
+        </div>
+    </div>
+</body>
+
+</html>
